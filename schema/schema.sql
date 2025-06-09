@@ -4,14 +4,14 @@ USE music_db;
 
 CREATE TABLE artists (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
--- create a "name" column that's a varchar of max 100 characters
+  name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE albums (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
--- create a "name" column that's a varchar of max 100 characters
--- create an "artist_id" column that's an integer
--- create a "release_year" column that's an integer
+  name VARCHAR (100) NOT NULL,
+  artist_id INT NOT NULL,
+  release_year INT NOT NULL,
   FOREIGN KEY (artist_id)
     REFERENCES artists (id)
     ON DELETE CASCADE
@@ -19,10 +19,10 @@ CREATE TABLE albums (
 
 CREATE TABLE songs (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
--- create a "name" column that's a varchar of max 100 characters
--- create a "track_number" column that's an integer
--- create an "artist_id" column that's an integer
--- create an "album_id" column that's an integer
+  name VARCHAR(100) NOT NULL,
+  track_number INT NOT NULL,
+  artist_id INT NOT NULL,
+  album_id INT NOT NULL,
   FOREIGN KEY (artist_id)
     REFERENCES artists (id)
     ON DELETE CASCADE,
