@@ -1,1 +1,2 @@
-# mmc6278-4-4-buteau-nayllah
+# Module 4 Assignment: Write MySQL Queries
+Create a relational database using SQL and MySQL.
